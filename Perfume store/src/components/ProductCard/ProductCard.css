@@ -1,0 +1,158 @@
+/* ProductCard.css */
+
+.card-wrapper {
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-heading {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.previous-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discount {
+  color: #d32f2f;
+}
+
+.card-action {
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.cart-button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.card-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Overlay Styles */
+.card-w-overlay .overlay-bg {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+/* ---------- RESPONSIVE LAYOUT ---------- */
+@media (max-width: 1024px) {
+  .card-img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-wrapper {
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  .card-heading {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .product-price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-img {
+    height: 150px;
+  }
+
+  .card-wrapper {
+    max-width: 95%;
+  }
+
+  .card-heading {
+    font-size: 0.95rem;
+  }
+}
+/* Out of stock overlay */
+.card-w-overlay {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.overlay-bg {
+  position: relative;
+}
